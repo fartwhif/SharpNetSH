@@ -1,6 +1,9 @@
 # SharpNetSH
 A simple netsh library for C#
 
+[![Build Status](https://travis-ci.org/totpero/SharpNetSH.svg?branch=master)](https://travis-ci.org/totpero/SharpNetSH)
+[![Build status](https://ci.appveyor.com/api/projects/status/1616999sw95jdg64?svg=true)](https://ci.appveyor.com/project/totpero/sharpnetsh)
+
 #####NuGet Installation:
 
     Install-Package SharpNetSH
