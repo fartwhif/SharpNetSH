@@ -13,7 +13,10 @@ namespace Ignite.SharpNetSH.WLAN
 
         }
 
-        public string ActionName => "wlan";
+        public string ActionName
+        {
+            get { return "wlan"; }
+        }
 
         public void Initialize(string priorText, IExecutionHarness harness)
         {
