@@ -5,7 +5,7 @@ namespace Ignite.SharpNetSH
 {
 	internal class BlockProcessor : IResponseProcessor
 	{
-		StandardResponse IResponseProcessor.ProcessResponse(IEnumerable<string> responseLines, int exitCode, string splitRegEx = null)
+		StandardResponse IResponseProcessor.ProcessResponse(IEnumerable<string> responseLines, int exitCode, string splitRegEx)
 		{
 		    var lines = responseLines.ToList();
 			var standardResponse = new StandardResponse();

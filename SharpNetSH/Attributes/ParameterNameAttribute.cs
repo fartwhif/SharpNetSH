@@ -15,7 +15,7 @@ namespace Ignite.SharpNetSH
 			BooleanType = booleanType;
 		}
 
-		public String ParameterName { get; }
+		public String ParameterName { get; private set; }
 		public BooleanType BooleanType { get; private set; }
 	}
 }

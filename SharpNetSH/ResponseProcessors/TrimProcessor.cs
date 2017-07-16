@@ -5,7 +5,7 @@ namespace Ignite.SharpNetSH
 {
 	internal class TrimProcessor : IResponseProcessor
 	{
-		StandardResponse IResponseProcessor.ProcessResponse(IEnumerable<string> responseLines, int exitCode, string splitRegEx = null)
+		StandardResponse IResponseProcessor.ProcessResponse(IEnumerable<string> responseLines, int exitCode, string splitRegEx)
 		{
 			IResponseProcessor response = new StandardResponse();
 

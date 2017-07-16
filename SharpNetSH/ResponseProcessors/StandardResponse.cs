@@ -14,7 +14,7 @@ namespace Ignite.SharpNetSH
 		internal StandardResponse()
 		{ }
 
-		StandardResponse IResponseProcessor.ProcessResponse(IEnumerable<string> responseLines, int exitCode, string splitRegEx = null)
+		StandardResponse IResponseProcessor.ProcessResponse(IEnumerable<string> responseLines, int exitCode, string splitRegEx)
 		{
 			ExitCode = exitCode;
 			IsNormalExit = exitCode == 0;
