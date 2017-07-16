@@ -1,4 +1,2 @@
-confguration Release
-
 before_build:
   - nuget restore
