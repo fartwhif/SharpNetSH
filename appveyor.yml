@@ -1,2 +1,5 @@
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+
 before_build:
   - nuget restore
