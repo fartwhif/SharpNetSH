@@ -22,6 +22,6 @@ namespace Ignite.SharpNetSH.Test.Spike
 		[MethodName("test")]
 		StandardResponse MethodWithNameDecoration();
 
-		StandardResponse MethodWithParameterNameDecoration([ParameterName("test")] String myParameter);
+		StandardResponse MethodWithParameterNameDecoration([ParameterName("test")] string myParameter);
 	}
 }
