@@ -10,6 +10,10 @@ nuget:
 
   project_feed: true
 
+before_build:
+
+- cmd: set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
+
 build:
 
   verbosity: minimal
