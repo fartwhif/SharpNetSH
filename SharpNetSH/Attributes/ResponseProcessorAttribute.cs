@@ -7,9 +7,9 @@ namespace Ignite.SharpNetSH
 	internal class ResponseProcessorAttribute : Attribute
 	{
 		public Type ResponseProcessorType { get; }
-		public String SplitRegEx { get; }
+		public string SplitRegEx { get; private set; }
 
-		public ResponseProcessorAttribute(Type responseProcessorType, String splitRegEx = null)
+		public ResponseProcessorAttribute(Type responseProcessorType, string splitRegEx = null)
 		{
 			if (!responseProcessorType.GetInterfaces().Contains(typeof (IResponseProcessor)))
 				throw new Exception("Invalid response processor type applied to attribute");
