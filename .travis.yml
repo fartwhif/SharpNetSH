@@ -1,2 +1,4 @@
 language: csharp
 solution: SharpNetSH.sln
+install:
+  - nuget restore SharpNetSH.sln
