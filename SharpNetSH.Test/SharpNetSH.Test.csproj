@@ -75,6 +75,7 @@
     <Compile Include="Spike\ITestAction.cs" />
     <Compile Include="Spike\StringHarness.cs" />
     <Compile Include="Spike\TestEnum.cs" />
+    <Compile Include="BasicTests.cs" />
     <Compile Include="WLAN\AddActionTests.cs" />
     <Compile Include="WLAN\DeleteActionTests.cs" />
     <Compile Include="WLAN\SetActionTests.cs" />
