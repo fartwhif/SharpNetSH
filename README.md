@@ -26,7 +26,7 @@ The `NetSH.CMD` command instantiates a new instance of the default NetSH object,
     var netsh = new NetSH(new CommandLineHarness());
     netsh.Http.Show.SSLCert("0.0.0.0:1234");
 
-If you wish to write your own execution harness simply implement the `Ignite.SharpNetSH.IExecutionHarness` interface.  We also provide a `ConsoleLogHarness` which simply directs your command output to `Console.WriteLine` calls.
+If you wish to write your own execution harness simply implement the `SharpNetSH.IExecutionHarness` interface.  We also provide a `ConsoleLogHarness` which simply directs your command output to `Console.WriteLine` calls.
 
 We have commented each method call with text directly from its MSDN counterpart, along with links to the original MSDN source pages.  As such, to explore the various contexts and actions, simply check out your type ahead for detailed information.
 
