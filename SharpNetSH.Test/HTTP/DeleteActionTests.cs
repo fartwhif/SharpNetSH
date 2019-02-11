@@ -1,8 +1,8 @@
-using Ignite.SharpNetSH.Test.Spike;
-using Ignite.SharpNetSH.HTTP.Enums;
+using SharpNetSH.Test.Spike;
+using SharpNetSH.HTTP.Enums;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Ignite.SharpNetSH.Test.HTTP
+namespace SharpNetSH.Test.HTTP
 {
 	[TestClass]
 	public class DeleteActionTests

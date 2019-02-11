@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Ignite.SharpNetSH
+namespace SharpNetSH
 {
     public sealed class StandardResponse : IResponseProcessor, IResponse
     {

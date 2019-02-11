@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Ignite.SharpNetSH
+namespace SharpNetSH
 {
     internal class Tree
     {

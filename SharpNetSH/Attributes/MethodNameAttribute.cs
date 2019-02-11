@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Ignite.SharpNetSH
+namespace SharpNetSH
 {
     [AttributeUsage(AttributeTargets.Method)]
     public class MethodNameAttribute : Attribute

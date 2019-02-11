@@ -1,4 +1,4 @@
-﻿namespace Ignite.SharpNetSH.WLAN
+﻿namespace SharpNetSH.WLAN
 {
     public interface IWlanAction
     {

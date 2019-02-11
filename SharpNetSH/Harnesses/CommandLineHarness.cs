@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace Ignite.SharpNetSH
+namespace SharpNetSH
 {
     /// <summary>
     /// A harness that executes actions using the command line

@@ -1,8 +1,8 @@
-﻿using Ignite.SharpNetSH.Test.Spike;
+﻿using SharpNetSH.Test.Spike;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Ignite.SharpNetSH.WLAN.Enums;
+using SharpNetSH.WLAN.Enums;
 
-namespace Ignite.SharpNetSH.Test.wlan
+namespace SharpNetSH.Test.wlan
 {
     [TestClass]
     public class DeleteActionTests

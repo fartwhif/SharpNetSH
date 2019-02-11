@@ -1,6 +1,6 @@
-﻿using Ignite.SharpNetSH.WLAN.Enums;
+﻿using SharpNetSH.WLAN.Enums;
 
-namespace Ignite.SharpNetSH.WLAN
+namespace SharpNetSH.WLAN
 {
     public interface IShowAction
     {

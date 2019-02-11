@@ -1,7 +1,7 @@
-﻿using Ignite.SharpNetSH.Test.Spike;
+﻿using SharpNetSH.Test.Spike;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Ignite.SharpNetSH.Test.HTTP
+namespace SharpNetSH.Test.HTTP
 {
 	[TestClass]
 	public class FlushActionTests

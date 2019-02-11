@@ -1,4 +1,4 @@
-﻿namespace Ignite.SharpNetSH.Test.Spike
+﻿namespace SharpNetSH.Test.Spike
 {
 	public enum TestEnum
 	{

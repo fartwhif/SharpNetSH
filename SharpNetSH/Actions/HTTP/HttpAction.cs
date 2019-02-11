@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Ignite.SharpNetSH.HTTP
+namespace SharpNetSH.HTTP
 {
     internal class HttpAction : IHttpAction, IAction
     {

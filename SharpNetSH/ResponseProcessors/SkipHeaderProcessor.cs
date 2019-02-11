@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Ignite.SharpNetSH
+namespace SharpNetSH
 {
     internal class SkipHeaderProcessor : IResponseProcessor
     {

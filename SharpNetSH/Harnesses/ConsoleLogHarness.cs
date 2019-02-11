@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Ignite.SharpNetSH
+namespace SharpNetSH
 {
     /// <summary>
     /// A harness that simply writes actions to the console (which does not actually execute anything)

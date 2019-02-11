@@ -1,9 +1,9 @@
 ﻿using System;
-using Ignite.SharpNetSH.Test.Spike;
+using SharpNetSH.Test.Spike;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
-namespace Ignite.SharpNetSH.Test
+namespace SharpNetSH.Test
 {
 	[TestClass]
 	public class ActionProxyTests

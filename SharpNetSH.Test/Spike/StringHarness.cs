@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Ignite.SharpNetSH.Test.Spike
+namespace SharpNetSH.Test.Spike
 {
 	public class StringHarness : IExecutionHarness
 	{

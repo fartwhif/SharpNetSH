@@ -1,7 +1,7 @@
-﻿using Ignite.SharpNetSH.HTTP.Enums;
+﻿using SharpNetSH.HTTP.Enums;
 using System;
 
-namespace Ignite.SharpNetSH.HTTP
+namespace SharpNetSH.HTTP
 {
     public interface IDeleteAction
     {

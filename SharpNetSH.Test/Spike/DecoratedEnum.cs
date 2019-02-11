@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Ignite.SharpNetSH.Test.Spike
+namespace SharpNetSH.Test.Spike
 {
 	public enum DecoratedEnum
 	{

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Ignite.SharpNetSH
+namespace SharpNetSH
 {
     [AttributeUsage(AttributeTargets.Method)]
     internal class ResponseProcessorAttribute : Attribute

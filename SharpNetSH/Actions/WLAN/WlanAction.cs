@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Ignite.SharpNetSH.WLAN
+namespace SharpNetSH.WLAN
 {
     internal class WlanAction : IWlanAction, IAction
     {

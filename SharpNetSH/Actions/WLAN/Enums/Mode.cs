@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Ignite.SharpNetSH.WLAN.Enums
+namespace SharpNetSH.WLAN.Enums
 {
     public enum Mode
     {

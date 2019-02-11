@@ -1,7 +1,7 @@
-﻿using Ignite.SharpNetSH.HTTP;
-using Ignite.SharpNetSH.WLAN;
+﻿using SharpNetSH.HTTP;
+using SharpNetSH.WLAN;
 
-namespace Ignite.SharpNetSH
+namespace SharpNetSH
 {
     public interface INetSH
     {

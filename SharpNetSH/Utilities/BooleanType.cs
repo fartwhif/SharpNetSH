@@ -1,4 +1,4 @@
-﻿namespace Ignite.SharpNetSH
+﻿namespace SharpNetSH
 {
     public enum BooleanType
     {

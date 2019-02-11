@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Ignite.SharpNetSH.Test
+namespace SharpNetSH.Test
 {
     [TestClass]
     public class BasicTests

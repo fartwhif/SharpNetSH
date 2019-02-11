@@ -1,7 +1,7 @@
-﻿using Ignite.SharpNetSH.WLAN.Enums;
+﻿using SharpNetSH.WLAN.Enums;
 using System;
 
-namespace Ignite.SharpNetSH.WLAN
+namespace SharpNetSH.WLAN
 {
     public interface IAddAction
     {
