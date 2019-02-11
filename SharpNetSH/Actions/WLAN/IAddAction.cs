@@ -1,5 +1,5 @@
-﻿using System;
-using Ignite.SharpNetSH.WLAN.Enums;
+﻿using Ignite.SharpNetSH.WLAN.Enums;
+using System;
 
 namespace Ignite.SharpNetSH.WLAN
 {

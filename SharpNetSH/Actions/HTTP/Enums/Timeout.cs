@@ -2,11 +2,11 @@
 
 namespace Ignite.SharpNetSH.HTTP.Enums
 {
-	public enum Timeout
-	{
-		[Description("idleconnectiontimeout")]
-		IdleConnectionTimeout,
-		[Description("headerwaittimeout")]
-		HeaderWaitTimeout
-	}
+    public enum Timeout
+    {
+        [Description("idleconnectiontimeout")]
+        IdleConnectionTimeout,
+        [Description("headerwaittimeout")]
+        HeaderWaitTimeout
+    }
 }

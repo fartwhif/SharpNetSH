@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net451</TargetFrameworks>
+    <TargetFrameworks>net35</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Company>Fintech</Company>
     <Version>1.0.0</Version>
@@ -14,9 +14,5 @@
     <PackageProjectUrl>https://github.com/ftlab/FluentDb</PackageProjectUrl>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\SharpNetSH.xml</DocumentationFile>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
 
 </Project>

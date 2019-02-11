@@ -1,5 +1,5 @@
-﻿using System;
-using Ignite.SharpNetSH.WLAN.Enums;
+﻿using Ignite.SharpNetSH.WLAN.Enums;
+using System;
 
 namespace Ignite.SharpNetSH.WLAN
 {
@@ -161,7 +161,7 @@ namespace Ignite.SharpNetSH.WLAN
         /// <param name="profileType">The desired profile type [all-user/per-user]. Required.</param>
         /// <param name="_interface">Name of the interface on which the profile is set.</param>
         /// <returns></returns>
-        [MethodName("profiletype")] 
+        [MethodName("profiletype")]
         IResponse ProfileType([ParameterName("name")] String name, [ParameterName("profiletype")] ProfileType profileType, [ParameterName("interface")] String _interface = null);
 
         /// <summary>

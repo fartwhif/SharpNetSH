@@ -1,5 +1,5 @@
 ﻿namespace Ignite.SharpNetSH
 {
-	internal interface IAction : IActionNameProvider, IInitializable
-	{ }
+    internal interface IAction : IActionNameProvider, IInitializable
+    { }
 }

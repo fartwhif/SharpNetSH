@@ -1,6 +1,6 @@
+using SharpNetSH.Utilities;
 using System;
 using System.Collections.Generic;
-using System.Dynamic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -27,7 +27,7 @@ namespace Ignite.SharpNetSH
             if (tabulatedLines.Any(x => !Regex.IsMatch(x, @"^\t"))) // If any lines start with a tab level of 0, we need to tab everything over by 1 tab
                 tabulatedLines = tabulatedLines.Select(x =>
                 {
-                    if (!string.IsNullOrWhiteSpace(x))
+                    if (!StringExtension.IsNullOrWhiteSpace(x))
                         return "\t" + x;
                     return x;
                 }).ToList();
@@ -44,7 +44,7 @@ namespace Ignite.SharpNetSH
             while (lineEnumerator.MoveNext())
             {
                 var line = lineEnumerator.Current;
-                if (string.IsNullOrWhiteSpace(line))
+                if (StringExtension.IsNullOrWhiteSpace(line))
                     continue;
 
                 var level = line.Length - line.TrimStart('\t').Length;
@@ -69,9 +69,9 @@ namespace Ignite.SharpNetSH
             }
         }
 
-        dynamic RecursivelyFlattenToDynamic(Tree source)
+        object RecursivelyFlattenToDynamic(Tree source)
         {
-            IDictionary<string, object> current = new ExpandoObject();
+            IDictionary<string, object> current = new Dictionary<string, object>();
             if (!(source.Value is String) || source.Value != "!#COLLECTION")
                 current[source.Title] = source.Value;
             else if (source.Value == "!#VALUE")

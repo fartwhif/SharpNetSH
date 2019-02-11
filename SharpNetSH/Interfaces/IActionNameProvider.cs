@@ -1,12 +1,10 @@
-﻿using System;
-
-namespace Ignite.SharpNetSH
+﻿namespace Ignite.SharpNetSH
 {
-	internal interface IActionNameProvider
-	{
-		/// <summary>
-		/// Gets the text to output to the netsh command
-		/// </summary>
-		string ActionName { get; }
-	}
+    internal interface IActionNameProvider
+    {
+        /// <summary>
+        /// Gets the text to output to the netsh command
+        /// </summary>
+        string ActionName { get; }
+    }
 }

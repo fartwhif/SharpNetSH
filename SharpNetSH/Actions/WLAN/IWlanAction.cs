@@ -21,7 +21,7 @@
         /// Represents a setting action
         /// </summary>
         ISetAction Set { get; }
-        
+
         /// <summary>
         /// Represents a querying action
         /// </summary>

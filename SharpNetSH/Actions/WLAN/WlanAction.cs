@@ -33,7 +33,7 @@ namespace Ignite.SharpNetSH.WLAN
         {
             get
             {
-                if(!_initialized)
+                if (!_initialized)
                     throw new Exception("Actions must be initialized prior to use.");
                 return ActionProxy<IAddAction>.Create("add", _priorText, _harness);
             }
