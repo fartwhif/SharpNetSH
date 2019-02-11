@@ -9,7 +9,7 @@ using System.Runtime.Serialization;
 
 namespace Ignite.SharpNetSH
 {
-    internal class ActionProxy<TInterface> : RealProxy
+    public class ActionProxy<TInterface> : RealProxy
     {
         private readonly string _priorText;
         private readonly string _actionName;
