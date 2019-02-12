@@ -74,7 +74,7 @@ namespace SharpNetSH
             return (TAttribute)attrs;
         }
 
-        public static KeyValuePair<string, object> ProcessRawData(this string line, string splitRegEx)
+        public static KeyValuePair<string, string> ProcessRawData(this string line, string splitRegEx)
         {
             var regex = new Regex(splitRegEx);
             var split = regex.Split(line.TrimStart(), 2);
@@ -86,42 +86,23 @@ namespace SharpNetSH
                 throw new Exception("Invalid RegEx for line: " + line);
 
             var title = split[0];
-            object value = split[1];
-            switch (((string)value).ToLower())
-            {
-                case "(null)":
-                    value = null;
-                    break;
-                case "yes":
-                case "true":
-                case "enable":
-                    value = true;
-                    break;
-                case "no":
-                case "false":
-                case "disable":
-                    value = false;
-                    break;
-            }
+            var value = split[1];
 
-            return new KeyValuePair<string, dynamic>(title.ToCSharpFriendlyPropertyName(), value);
+            return new KeyValuePair<string, string>(title.ToFriendlyPropertyName(), value);
         }
 
-        public static string ToCSharpFriendlyPropertyName(this string name)
+        public static string ToFriendlyPropertyName(this string name)
         {
-            var textInfo = new CultureInfo("en-US", false).TextInfo;
-            var titleCaseTitle = Regex.Replace(textInfo.ToTitleCase(name), @"\s+", "");
-            titleCaseTitle = Regex.Replace(titleCaseTitle, "[^a-zA-Z0-9 -]", ""); // Remove any non-alphanumeric characters
-            return titleCaseTitle;
+            return name;
         }
 
-        public static object ProcessRawData(this IEnumerable<string> lines, string splitRegEx)
+        public static Dictionary<string, string> ProcessRawData(this IEnumerable<string> lines, string splitRegEx)
         {
-            var outputObject = new Dictionary<string, object>();
+            var outputObject = new Dictionary<string, string>();
             foreach (var line in lines)
             {
                 var processedLine = line.ProcessRawData(splitRegEx);
-                ((IDictionary<string, object>)outputObject)[processedLine.Key] = processedLine.Value;
+                outputObject[processedLine.Key] = processedLine.Value;
             }
             return outputObject;
         }

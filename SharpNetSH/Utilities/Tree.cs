@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SharpNetSH
 {
-    internal class Tree
+    public class Tree
     {
         public string RawText { get; set; }
         public string Title { get; set; }

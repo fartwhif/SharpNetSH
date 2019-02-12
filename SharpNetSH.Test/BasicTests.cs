@@ -9,7 +9,7 @@ namespace SharpNetSH.Test
         [TestMethod]
         public void FullUrlAclTest()
         {
-            var testUrl = "http://localhost:8030/test";
+            var testUrl = "http://localhost:8030/test/";
             var testUser = Environment.UserDomainName + "\\" + Environment.UserName;
 
             var cmd = new CommandLineHarness();
@@ -17,7 +17,7 @@ namespace SharpNetSH.Test
                 cmd);
             var http = netsh.Http;
 
-            var showResponse = http.Show.UrlAcl();
+            var showResponse = http.Show.UrlAcl(testUrl);
             var addResponse = http.Add.UrlAcl(url: testUrl, user: testUser, sddl: null);
         }
     }

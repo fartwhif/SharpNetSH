@@ -14,7 +14,7 @@ namespace SharpNetSH
 
             if (exitCode != 0) return standardResponse;
 
-            var objects = new List<dynamic>();
+            var objects = new List<object>();
             var currentObjectRows = new List<string>();
 
             foreach (var line in lines.Skip(3))

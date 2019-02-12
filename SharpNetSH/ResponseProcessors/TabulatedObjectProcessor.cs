@@ -34,7 +34,7 @@ namespace SharpNetSH
 
             var root = new Tree();
             RecursivelyProcessToTree(tabulatedLines.Skip(3).GetEnumerator(), root, splitRegEx);
-            standardResponse.ResponseObject = root.Children.Select(child => RecursivelyFlattenToDynamic(child)).ToList(); // Remove the root and add the dynamic objects to the response
+            standardResponse.ResponseObject = root;
             return standardResponse;
         }
 
@@ -67,64 +67,6 @@ namespace SharpNetSH
                     parent.Children.Add(tree);
                 }
             }
-        }
-
-        object RecursivelyFlattenToDynamic(Tree source)
-        {
-            IDictionary<string, object> current = new Dictionary<string, object>();
-            if (!(source.Value is String) || source.Value != "!#COLLECTION")
-                current[source.Title] = source.Value;
-            else if (source.Value == "!#VALUE")
-                return source.Value;
-
-            var lastHeading = string.Empty;
-            var keepLastHeading = false;
-
-            if (source.Children.All(x => x.Value is string && x.Value == "!#COLLECTION"))
-                current[source.Title] = source.Children.Select(child => child.RawText.Trim()).Cast<dynamic>().ToList();
-            else
-            {
-                foreach (var childGrouping in source.Children.GroupBy(x => x.Title))
-                {
-                    if (childGrouping.Count() > 1) // It's a collection of objects
-                    {
-                        var collection = childGrouping.Select(subChild => RecursivelyFlattenToDynamic(subChild)).ToList();
-                        if (keepLastHeading)
-                            current[lastHeading] = collection;
-                        else
-                            current[childGrouping.Key] = collection;
-                    }
-                    else // It's a single object
-                    {
-                        var child = childGrouping.First();
-                        if (child.Children.Any())
-                        {
-                            keepLastHeading = false;
-                            current[child.Title] = RecursivelyFlattenToDynamic(child);
-                        }
-                        else if (child.Value is String)
-                        {
-                            if (child.Value == "!#COLLECTION")
-                                current[child.Title] = null;
-                            else if (child.Value != "!#COLLECTION")
-                                current[child.Title] = child.Value;
-                        }
-                        else
-                            current[child.Title] = child.Value;
-                    }
-
-                    if (keepLastHeading)
-                        keepLastHeading = false;
-
-                    if (childGrouping.First().Value is String && childGrouping.First().Value == "!#COLLECTION")
-                    {
-                        lastHeading = childGrouping.Key;
-                        keepLastHeading = true;
-                    }
-                }
-            }
-
-            return current;
         }
     }
 }
