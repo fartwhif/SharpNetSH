@@ -5,15 +5,13 @@ namespace SharpNetSH.Test.Spike
 {
 	public class StringHarness : IExecutionHarness
 	{
-		private String _value;
+	    public string Value { get; private set; }
 
-		public String Value => _value;
-
-	    public IEnumerable<String> Execute(string action, out int exitCode)
+	    public IEnumerable<string> Execute(string action, out int exitCode)
 		{
-			_value = action;
+			Value = action;
 			exitCode = 0;
-			return new List<String>();
+			return new List<string>();
 		}
 	}
 }

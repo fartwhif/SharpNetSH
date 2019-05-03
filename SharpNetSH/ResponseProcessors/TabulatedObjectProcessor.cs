@@ -8,35 +8,35 @@ namespace SharpNetSH
 {
     internal class TabulatedObjectProcessor : IResponseProcessor
     {
-        StandardResponse IResponseProcessor.ProcessResponse(IEnumerable<string> responseLines, int exitCode, string splitRegEx = null)
-        {
-            var lines = responseLines.ToList();
-            var standardResponse = new StandardResponse();
-            ((IResponseProcessor)standardResponse).ProcessResponse(lines, exitCode);
+		StandardResponse IResponseProcessor.ProcessResponse(IEnumerable<string> responseLines, int exitCode, string splitRegEx)
+		{
+			var lines = responseLines.ToList();
+			var standardResponse = new StandardResponse();
+			((IResponseProcessor)standardResponse).ProcessResponse(lines, exitCode);
 
-            if (exitCode != 0) return standardResponse;
+			if (exitCode != 0) return standardResponse;
 
-            var regex = new Regex(@"[ ]{4}");
-            var tabulatedLines = lines.ToList().Select(x =>
-            {
-                while (Regex.IsMatch(x, @"^\t*([ ]{4})+")) // Ensures we are still working on a tab at the beginning of the line
-                    x = regex.Replace(x, "\t", 1);
-                return x;
-            }).ToList(); //Convert the beginning spaces to tabs
+			var regex = new Regex(@"[ ]{4}");
+			var tabulatedLines = lines.ToList().Select(x =>
+			{
+				while (Regex.IsMatch(x, @"^\t*([ ]{4})+")) // Ensures we are still working on a tab at the beginning of the line
+					x = regex.Replace(x, "\t", 1);
+				return x;
+			}).ToList(); //Convert the beginning spaces to tabs
 
-            if (tabulatedLines.Any(x => !Regex.IsMatch(x, @"^\t"))) // If any lines start with a tab level of 0, we need to tab everything over by 1 tab
-                tabulatedLines = tabulatedLines.Select(x =>
-                {
+			if (tabulatedLines.Any(x => !Regex.IsMatch(x, @"^\t"))) // If any lines start with a tab level of 0, we need to tab everything over by 1 tab
+				tabulatedLines = tabulatedLines.Select(x =>
+				{
                     if (!StringExtension.IsNullOrWhiteSpace(x))
-                        return "\t" + x;
-                    return x;
-                }).ToList();
+						return "\t" + x;
+					return x;
+				}).ToList();
 
-            var root = new Tree();
-            RecursivelyProcessToTree(tabulatedLines.Skip(3).GetEnumerator(), root, splitRegEx);
+			var root = new Tree();
+			RecursivelyProcessToTree(tabulatedLines.Skip(3).GetEnumerator(), root, splitRegEx);
             standardResponse.ResponseObject = root;
-            return standardResponse;
-        }
+			return standardResponse;
+		}
 
         void RecursivelyProcessToTree(IEnumerator<string> lineEnumerator, Tree parent, string splitRegEx)
         {

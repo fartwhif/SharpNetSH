@@ -15,13 +15,13 @@ namespace SharpNetSH
         internal StandardResponse()
         { }
 
-        StandardResponse IResponseProcessor.ProcessResponse(IEnumerable<string> responseLines, int exitCode, string splitRegEx = null)
-        {
-            ExitCode = exitCode;
-            IsNormalExit = exitCode == 0;
+		StandardResponse IResponseProcessor.ProcessResponse(IEnumerable<string> responseLines, int exitCode, string splitRegEx)
+		{
+			ExitCode = exitCode;
+			IsNormalExit = exitCode == 0;
             var nonEmptyLines = responseLines.Where(x => !StringExtension.IsNullOrWhiteSpace(x)).ToList();
-            Response = nonEmptyLines.Any() ? nonEmptyLines.Aggregate((current, next) => current + Environment.NewLine + next) : string.Empty;
-            return this;
-        }
+			Response = nonEmptyLines.Any() ? nonEmptyLines.Aggregate((current, next) => current + Environment.NewLine + next) : string.Empty;
+			return this;
+		}
     }
 }

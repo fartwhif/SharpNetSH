@@ -8,6 +8,6 @@ namespace SharpNetSH
         public MethodNameAttribute(string methodName)
         { MethodName = methodName; }
 
-        public String MethodName { get; }
+		public String MethodName { get; private set; }
     }
 }

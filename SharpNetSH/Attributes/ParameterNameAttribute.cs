@@ -16,7 +16,7 @@ namespace SharpNetSH
             BooleanType = booleanType;
         }
 
-        public String ParameterName { get; }
-        public BooleanType BooleanType { get; }
+		public String ParameterName { get; private set; }
+		public BooleanType BooleanType { get; private set; }
     }
 }

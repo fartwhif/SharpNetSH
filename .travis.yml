@@ -1,0 +1,7 @@
+language: csharp
+solution: SharpNetSH.sln
+install:
+  - nuget restore SharpNetSH.sln
+script:
+- xbuild SharpNetSH.sln
+#- mono ./packages/xunit.runner.console*/tools/xunit.console.exe ./SharpNetSH.Test/bin/Debug/SharpNetSH.Tests.dll

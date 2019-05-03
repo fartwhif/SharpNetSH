@@ -6,31 +6,31 @@ namespace SharpNetSH
 {
     internal class BlockProcessor : IResponseProcessor
     {
-        StandardResponse IResponseProcessor.ProcessResponse(IEnumerable<string> responseLines, int exitCode, string splitRegEx = null)
-        {
-            var lines = responseLines.ToList();
-            var standardResponse = new StandardResponse();
-            ((IResponseProcessor)standardResponse).ProcessResponse(lines, exitCode);
+		StandardResponse IResponseProcessor.ProcessResponse(IEnumerable<string> responseLines, int exitCode, string splitRegEx)
+		{
+		    var lines = responseLines.ToList();
+			var standardResponse = new StandardResponse();
+			((IResponseProcessor)standardResponse).ProcessResponse(lines, exitCode);
 
-            if (exitCode != 0) return standardResponse;
+			if (exitCode != 0) return standardResponse;
 
             var objects = new List<object>();
-            var currentObjectRows = new List<string>();
+			var currentObjectRows = new List<string>();
 
-            foreach (var line in lines.Skip(3))
-            {
+			foreach (var line in lines.Skip(3))
+			{
                 if (StringExtension.IsNullOrWhiteSpace(line))
-                {
-                    if (currentObjectRows.Count > 0)
-                        objects.Add(currentObjectRows.ProcessRawData(splitRegEx));
-                    currentObjectRows = new List<string>();
-                }
-                else
-                    currentObjectRows.Add(line);
-            }
+				{
+					if (currentObjectRows.Count > 0)
+						objects.Add(currentObjectRows.ProcessRawData(splitRegEx));
+					currentObjectRows = new List<string>();
+				}
+				else
+					currentObjectRows.Add(line);
+			}
 
-            standardResponse.ResponseObject = objects;
-            return standardResponse;
-        }
+			standardResponse.ResponseObject = objects;
+			return standardResponse;
+		}
     }
 }
