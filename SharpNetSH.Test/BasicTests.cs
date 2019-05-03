@@ -7,6 +7,7 @@ namespace SharpNetSH.Test
     public class BasicTests
     {
         [TestMethod]
+        [Ignore]
         public void FullUrlAclTest()
         {
             var testUrl = "http://localhost:8030/test/";

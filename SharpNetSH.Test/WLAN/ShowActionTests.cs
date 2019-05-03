@@ -11,6 +11,7 @@ namespace SharpNetSH.Test.WLAN
         public void Test()
         {
             var netsh = new NetSH(new CommandLineHarness()).Wlan.Show.Settings();
+            Assert.IsNotNull(netsh);
         }
 
         [TestMethod]
@@ -34,7 +35,7 @@ namespace SharpNetSH.Test.WLAN
         public void VerifyNetworksOutput()
         {
             var harness = new StringHarness();
-            new NetSH(harness).Wlan.Show.Networks(null,NetworkMode.Ssid);
+            new NetSH(harness).Wlan.Show.Networks(null, NetworkMode.Ssid);
             Assert.AreEqual("netsh wlan show networks mode=ssid", harness.Value);
 
             new NetSH(harness).Wlan.Show.Networks();

@@ -77,6 +77,9 @@ namespace SharpNetSH
                 else
                     // Otherwise it's a stringable (i.e. ToString()) property
                     results.Add(parameterName + "=" + value);
+
+                if (!string.IsNullOrEmpty(parameter.GetAppendKeyword()))
+                    results.Add(parameter.GetAppendKeyword());
             }
             if (results.Count == 0) return method.GetMethodName();
             return method.GetMethodName() + " " + results.Aggregate((x, y) => StringExtension.IsNullOrWhiteSpace(x) ? y : x + " " + y);

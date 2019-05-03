@@ -1,4 +1,5 @@
-﻿using SharpNetSH.HTTP;
+﻿using SharpNetSH.ADVFIREWALL;
+using SharpNetSH.HTTP;
 using SharpNetSH.WLAN;
 
 namespace SharpNetSH
@@ -12,5 +13,7 @@ namespace SharpNetSH
         IHttpAction Http { get; }
 
         IWlanAction Wlan { get; }
+
+        IAdvFirewallAction AdvFirewall { get; }
     }
 }

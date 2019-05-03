@@ -18,5 +18,6 @@ namespace SharpNetSH
 
 		public String ParameterName { get; private set; }
 		public BooleanType BooleanType { get; private set; }
+        public string AppendKeyword { get; set; }
     }
 }

@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpNetSH", "SharpNetSH\SharpNetSH.csproj", "{1D5538C2-302B-4229-99EB-6A5D15ED1CF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpNetSH.Dev", "SharpNetSH\SharpNetSH.Dev.csproj", "{1D5538C2-302B-4229-99EB-6A5D15ED1CF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpNetSH.Test", "SharpNetSH.Test\SharpNetSH.Test.csproj", "{E9BD9265-7C0C-4962-B924-AFBE89E155F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpNetSH.Test", "SharpNetSH.Test\SharpNetSH.Test.csproj", "{E9BD9265-7C0C-4962-B924-AFBE89E155F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {633E7757-D8D3-406D-975A-05A85584804A}
 	EndGlobalSection
 EndGlobal

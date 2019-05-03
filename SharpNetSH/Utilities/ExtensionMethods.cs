@@ -42,6 +42,13 @@ namespace SharpNetSH
             throw new Exception("Missing boolean type");
         }
 
+        public static string GetAppendKeyword(this ParameterInfo parameter)
+        {
+            foreach (var attribute in Attribute.GetCustomAttributes(parameter).OfType<ParameterNameAttribute>())
+                return (attribute).AppendKeyword;
+            return string.Empty;
+        }
+
         public static string GetBooleanValue(this BooleanType enumerationValue, bool value)
         {
             var attribute = enumerationValue.GetEnumValue<BooleanType, BooleanValueAttribute>();
