@@ -6,9 +6,38 @@ namespace SharpNetSH
     /// <summary>
     /// A harness that executes actions using the command line
     /// </summary>
-    public class CommandLineHarness : IExecutionHarness
+    public class CommandLineHarness : IExecutionHarness, IExecutionAdministratorHarness
     {
+        /// <summary>
+        /// Executes command
+        /// </summary>
+        /// <param name="action"></param>
+        /// <param name="exitCode"></param>
+        /// <returns></returns>
         public IEnumerable<string> Execute(string action, out int exitCode)
+        {
+            var process = CreateProcess(action);
+
+            return RunProcess(out exitCode, process);
+        }
+
+        private static IEnumerable<string> RunProcess(out int exitCode, Process process)
+        {
+            process.Start();
+
+            var lines = new List<string>();
+            if (process.StartInfo.RedirectStandardOutput)
+                while (!process.StandardOutput.EndOfStream)
+                    lines.Add(process.StandardOutput.ReadLine());
+
+            process.WaitForExit();
+
+            exitCode = process.ExitCode;
+
+            return lines;
+        }
+
+        private static Process CreateProcess(string action)
         {
             var process = new Process
             {
@@ -22,16 +51,24 @@ namespace SharpNetSH
                     Arguments = "/c " + action
                 }
             };
+            return process;
+        }
 
-            process.Start();
+        /// <summary>
+        /// Executes command using runas verb
+        /// </summary>
+        /// <param name="action"></param>
+        /// <param name="exitCode"></param>
+        /// <returns></returns>
+        public IEnumerable<string> ExecuteAsAdministrator(string action, out int exitCode)
+        {
+            var process = CreateProcess(action);
 
-            var lines = new List<string>();
-            while (!process.StandardOutput.EndOfStream)
-                lines.Add(process.StandardOutput.ReadLine());
+            process.StartInfo.Verb = "runas";
+            process.StartInfo.RedirectStandardOutput = false;
+            process.StartInfo.UseShellExecute = true;
 
-            exitCode = process.ExitCode;
-
-            return lines;
+            return RunProcess(out exitCode, process);
         }
     }
 }

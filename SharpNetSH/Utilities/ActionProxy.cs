@@ -31,7 +31,15 @@ namespace SharpNetSH
             var method = (MethodInfo)methodCall.MethodBase;
             var result = ProcessParameters(method, methodCall);
             int exitCode;
-            var response = _harness.Execute(_priorText + " " + _actionName + " " + result, out exitCode);
+            var actionName = _priorText + " " + _actionName + " " + result;
+            var runas = method.IsAdministratorRequired() && !PermissionsHelper.IsRunAsAdministrator();
+
+            IEnumerable<string> response;
+            if (runas && _harness is IExecutionAdministratorHarness d)
+                response = d.ExecuteAsAdministrator(actionName, out exitCode);
+            else
+                response = _harness.Execute(actionName, out exitCode);
+
             var processorType = method.GetResponseProcessorType();
             var splitRegEx = method.GetSplitRegEx();
 

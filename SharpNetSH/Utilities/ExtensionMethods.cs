@@ -17,6 +17,11 @@ namespace SharpNetSH
             return method.Name;
         }
 
+        public static bool IsAdministratorRequired(this MethodBase method)
+        {
+            return Attribute.GetCustomAttributes(method).OfType<AdministratorRequiredAttribute>().Any();
+        }
+
         public static Type GetResponseProcessorType(this MethodInfo method)
         {
             var attr = Attribute.GetCustomAttributes(method).OfType<ResponseProcessorAttribute>().Select(attribute => attribute.ResponseProcessorType).FirstOrDefault();

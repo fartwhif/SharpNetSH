@@ -17,6 +17,7 @@ namespace SharpNetSH.Actions.ADVFIREWALL.FIREWALL
         /// <param name="localport">True: Allows the user to delegate URLs.<br></br>
         ///     False: Denies the user from delegating URLs. This is the default value.</param>
         [MethodName("rule")]
+        [AdministratorRequired]
         IResponse Rule([ParameterName("name", AppendKeyword = "new")] string name,
             [ParameterName("dir")] Direction? dir = null,
             [ParameterName("action")] Action? action = null,

@@ -46,6 +46,7 @@ namespace SharpNetSH.HTTP
         /// </summary>
         /// <param name="url">Specifies the fully qualified URL.</param>
         [MethodName("urlacl")]
+        [AdministratorRequired]
         IResponse UrlAcl([ParameterName("url")] String url);
     }
 }

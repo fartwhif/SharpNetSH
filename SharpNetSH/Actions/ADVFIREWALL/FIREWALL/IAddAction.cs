@@ -22,6 +22,7 @@ namespace SharpNetSH.Actions.ADVFIREWALL.FIREWALL
         /// <remarks>
         /// </remarks>
         [MethodName("rule")]
+        [AdministratorRequired]
         IResponse Rule([ParameterName("name")] string name,
             [ParameterName("dir")] Direction dir,
             [ParameterName("action")] Action action,

@@ -65,6 +65,7 @@ namespace SharpNetSH.HTTP
         /// <param name="user">Specifies the user or user group name.</param>
         /// <param name="sddl">Specifies the SDDL string that describes the DACL.</param>
         [MethodName("urlacl")]
+        [AdministratorRequired]
         IResponse UrlAcl([ParameterName("url")] string url,
                          [ParameterName("user")] string user,
                          [ParameterName("sddl")] string sddl = null);
@@ -80,6 +81,7 @@ namespace SharpNetSH.HTTP
         /// <param name="delegateUrls">True: Allows the user to delegate URLs.<br></br>
         /// False: Denies the user from delegating URLs. This is the default value.</param>
         [MethodName("urlacl")]
+        [AdministratorRequired]
         IResponse UrlAcl([ParameterName("url")] string url,
                          [ParameterName("user")] string user,
                          [ParameterName("listen")] bool? listenUrls = null,

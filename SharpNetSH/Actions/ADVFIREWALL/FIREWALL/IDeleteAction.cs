@@ -13,6 +13,7 @@ namespace SharpNetSH.Actions.ADVFIREWALL.FIREWALL
         /// </summary>
         /// <param name="name">Specifies the fully qualified URL.</param>
         [MethodName("rule")]
+        [AdministratorRequired]
         IResponse Rule([ParameterName("name")] String name);
     }
 }
