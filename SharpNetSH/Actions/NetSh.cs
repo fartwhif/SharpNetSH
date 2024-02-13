@@ -1,6 +1,7 @@
-﻿using SharpNetSH.ADVFIREWALL;
+﻿using SharpNetSH.INTERFACE;
 using SharpNetSH.HTTP;
 using SharpNetSH.WLAN;
+using SharpNetSH.ADVFIREWALL;
 
 namespace SharpNetSH
 {
@@ -32,5 +33,7 @@ namespace SharpNetSH
 	    }
 
         public IAdvFirewallAction AdvFirewall => AdvFirewallAction.CreateAction("netsh", _harness);
+
+        public IInterfaceAction Interface => InterfaceAction.CreateAction("netsh", _harness);
     }
 }
